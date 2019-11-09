@@ -14,7 +14,7 @@
 ## groups デーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|
+|name|string|null: false|
 ### Association
 - has_many :messages
 - has_many :users, through: :groups_users
@@ -24,7 +24,7 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|string|
+|image|string|null: false|
 |body|text|null: false|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
