@@ -9,23 +9,23 @@
 ### Association
 - has_many :messages
 - has_many :groups, through: :groups_users
+- has_many :groups_users
 
 ## groups デーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|
-|user_id|integer|null: false, foreign_key: true|
-|message_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :messages
 - has_many :users, through: :groups_users
+- has_many :groups_users
 
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false|
-|body|string||
+|image|string|
+|body|text|null: false|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
