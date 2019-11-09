@@ -18,12 +18,12 @@
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :groups_users
+- has_many :groups,  through:  :groups_users
 
 ## groups デーブル
 |Column|Type|Options|
 |------|----|-------|
-|group|text||
+|group|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :groups_users
