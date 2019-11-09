@@ -8,7 +8,7 @@
 |name|string|null: false, unique: true|
 ### Association
 - has_many :messages
-- has_many :groups
+- has_many :groups, through: :groups_users
 
 ## groups デーブル
 |Column|Type|Options|
