@@ -6,6 +6,7 @@
     height: 100px;
     padding: 0 40px;
     
+    
     .left-header {
       float: left;
       &__title {
@@ -75,9 +76,10 @@
       float: left;
       height: 50px;
       width: calc(100% - 150px);
+      
     }
     &__mask {
-      background-color: #fafafa;
+      background-color: #FAFAFA;
       float: left;
       height: 50px;
       padding-right: 10px;
