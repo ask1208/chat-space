@@ -30,7 +30,7 @@
     background-color: #2f3e51;
     height: calc(100vh - 105px);
     padding: 20px 20px 0;
-    color: #ffffff;
+    color: #ffffff!important;
     width: 275px;
     overflow: scroll;
     
@@ -40,12 +40,13 @@
       &__name {
         font-size: 15px;
         margin-bottom: 5px;
-        
+        color: white;
         
       }
       &__message {
         font-size: 11px;
         margin-top: 5px;
+        color: white;
       }
     }
   }
