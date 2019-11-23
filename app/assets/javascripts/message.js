@@ -43,8 +43,7 @@ $(function(){
        $('#message_content').val('')
       })
     .fail(function(){
-
-
-    })
+      alert("メッセージ送信に失敗しました");
+    });
   })
 });
