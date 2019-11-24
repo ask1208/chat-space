@@ -1,26 +1,9 @@
-
-.chat
-  .header
-    .left-header
-      .left-header__title
-        = @group.name
-      %ul.left-header__members
-        Member：
-        %li.member
-          - @group.users.each do |user|
-            = user.name
-    .right-header
-      .right-header__button
-        = link_to "Edit", edit_group_path(@group)
-
-  .messages
-    = render "main_chat"
-
-  .form
-    = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-      .form__mask
-        = f.label :image, class: 'form__mask__image' do
-          = icon('fa','image',class: 'icon')
-          = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'form__submit'
+.message
+  .upper-message
+    .upper-message__user-name
+      = message.user.name
+    .upper-message__date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .lower-message
+    %p.lower-message__content= message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
