@@ -1,23 +1,26 @@
 $(function(){
   function buildHTML(message){
-    var html = `<div class="message">
-    <div class="upper-message">
-    <div class="upper-message__user-name">
-    ${message.name}
-    </div>
-    <div class="upper-message__date">
-    ${message.date}
-    </div>
-    </div>
-    <div class="lower-meesage">
-    <p class="lower-message__content">
-    ${message.content}
-   </p>
-    <img src=${message.image}>
+　var image = (message.image) ?  `<img src=${message.image}>` :'';
+    var html = 
+  `<div class="message">
+      <div class="upper-message">
+          <div class="upper-message__user-name">
+    　　　    ${message.name}
+      　  </div>
+    　　  <div class="upper-message__date">
+    　　　    ${message.date}
+    　　  </div>
+  　  </div>
+  　<div class="lower-meesage">
+          <p class="lower-message__content">
+   　　　   ${message.content}
+   　   　</p>
+   　　 ${image}
     
+      </div>
     </div>
-    </div>
-    </div>`
+  </div>`
+
     return html;
   }
 
@@ -40,7 +43,8 @@ $(function(){
        $('.messages').append(html)
        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
        $('.box').animate({'height' : '200px'});
-       $('#message_content').val('')
+       $('#message_content').reset();
+
       })
     .fail(function(){
       alert("メッセージ送信に失敗しました");
