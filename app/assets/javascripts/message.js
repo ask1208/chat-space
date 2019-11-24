@@ -11,15 +11,13 @@ $(function(){
     　　　    ${message.date}
     　　  </div>
   　  </div>
-  　<div class="lower-meesage">
+  　  <div class="lower-meesage">
           <p class="lower-message__content">
    　　　   ${message.content}
    　   　</p>
    　　 ${image}
-    
       </div>
-    </div>
-  </div>`
+    </div>`
 
     return html;
   }
@@ -43,7 +41,7 @@ $(function(){
        $('.messages').append(html)
        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
        $('.box').animate({'height' : '200px'});
-       $('#message_content').reset();
+       $('#new_message')[0].reset();
 
       })
     .fail(function(){
