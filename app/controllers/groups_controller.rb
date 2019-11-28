@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :set_group, only: [:edit, :update]
+
   def index
     @groups = current_user.groups
   end
@@ -11,8 +13,11 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
-      redirect_to root_path, notice: 'グループを作成しました'
+      redirect_to |format|
+      format.html {render_to root_path, notice: 'グループを作成しました'}
+      format.json
     else
+      flasch[:alert] = "グループ名にデータを入力していないので保存できませんでした"
       render :new
     end
   end
@@ -24,8 +29,9 @@ class GroupsController < ApplicationController
 
   def update
     if @group.update(group_params)
-      redirect_to group_messages_path(@group), notice: 'グループを編集しました'
+      redirect_to root_path(@group), notice: "グループを変更しました。"
     else
+      flash[:alert] = "グループ名にデータを入力していないので保存できませんでした。"
       render :edit
     end
   end
