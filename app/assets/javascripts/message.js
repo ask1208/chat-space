@@ -112,7 +112,6 @@ $(function(){
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     last_message_id = $('.message:last').attr('id');
     group_id = $('.right-header').attr('id')
-    console.log(last_message_id);
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
@@ -142,7 +141,7 @@ $(function(){
   }
   };
 
-  // setInterval(reloadMessages, 10000);
+   setInterval(reloadMessages, 10000);
   
 
 });
