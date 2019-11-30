@@ -1,28 +1,7 @@
 $(function(){
 
   function buildHTML(message){
-  var image = (message.image) ?  `<img src=${message.image}>` :'';
-    var html = 
-  `<div class="message" id = "${message.id}">
-      <div class="upper-message">
-          <div class="upper-message__user-name">
-              ${message.name}
-          </div>
-          <div class="upper-message__date">
-              ${message.date}
-          </div>
-      </div>
-      <div class="lower-meesage">
-          <p class="lower-message__content">
-           ${message.content}
-         </p>
-       ${image}
-      </div>
-    </div>`
-
-    return html;
-  }
-  function aaaaHTML(message){
+  
     if (message.image !== null) {img = `<img src="${message.image.url}">`} 
       var imag = `
         <p class="lower-message__content"></p>
@@ -42,8 +21,8 @@ $(function(){
     <div class="lower-meesage">
         <p class="lower-message__content">
         ${ message.content }
+        </p>
         ${ message.image == null ? "" : '<img src="' + message.image + '">' }
-       </p>
     </div>
   </div>`
     return basehtml;
@@ -95,7 +74,7 @@ $(function(){
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       $('.box').animate({'height' : '200px'});
       $.each(messages, function(i, message) {
-        insertHTML += aaaaHTML(message)
+        insertHTML += buildHTML(message)
       });
 
       //メッセージが入ったHTMLに、入れ物ごと追加
