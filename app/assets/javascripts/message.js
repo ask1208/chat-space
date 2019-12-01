@@ -3,7 +3,7 @@ $(function(){
   function buildHTML(message){
   
     if (message.image !== null) {img = `<img src="${message.image.url}">`} 
-      var imag = `
+    var imag = `
         <p class="lower-message__content"></p>
         <img class="lower-message__image" src="${message.image}">`
 
@@ -23,7 +23,7 @@ $(function(){
         ${ message.content }
         </p>
         ${ message.image == null ? "" : '<img src="' + message.image + '">' }
-    </div>
+     </div>
   </div>`
     return basehtml;
   }
@@ -81,6 +81,7 @@ $(function(){
       $('.messages').append(insertHTML);
     })
     .fail(function() {
+      alert("メッセージ送信に失敗しました");
     });
   }
   };
