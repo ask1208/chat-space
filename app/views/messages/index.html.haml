@@ -12,7 +12,7 @@
               = user.name
       .right-header{id: "#{@group.id}"}
         .right-header__button
-          = link_to "Edit", edit_group_path(@group)
+          = link_to "Edit", edit_group_path(@group),class: 'btn'
     .messages
       = render @messages
     = render 'form'

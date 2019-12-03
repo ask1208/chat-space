@@ -19,9 +19,8 @@
       .list {
         display: inline-block;
       }
-      .icon {
-        color: #ffffff;
-        font-size: 16px;
+      a:visited{
+        color :  #ffffff;
       }
     }
   }
@@ -48,6 +47,9 @@
         margin-top: 5px;
         color: white;
       }
+    }
+    a:visited{
+      color :   #2f3e51ff;
     }
   }
 }
