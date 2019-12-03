@@ -36,6 +36,9 @@
     .group {
       box-sizing: border-box;
       padding: 0 0 40px;
+      .btn{
+        text-decoration-line: none;
+      }
       &__name {
         font-size: 15px;
         margin-bottom: 5px;
@@ -46,6 +49,7 @@
         font-size: 11px;
         margin-top: 5px;
         color: white;
+        
       }
     }
     a:visited{
