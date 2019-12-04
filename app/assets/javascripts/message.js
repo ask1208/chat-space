@@ -70,15 +70,16 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      var insertHTML = '';
-      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-      $('.box').animate({'height' : '200px'});
-      $.each(messages, function(i, message) {
-        insertHTML += buildHTML(message)
-      });
-
-      //メッセージが入ったHTMLに、入れ物ごと追加
-      $('.messages').append(insertHTML);
+      if(messages.length !==0) {
+        var insertHTML = '';
+        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+        $('.box').animate({'height' : '200px'});
+        $.each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
+          //メッセージが入ったHTMLに、入れ物ごと追加
+        $('.messages').append(insertHTML);
+        });
+      }
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");

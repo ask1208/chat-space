@@ -4,10 +4,10 @@
       = current_user.name
     %ul.header__lists
       %li.list
-        = link_to new_group_path do
+        = link_to new_group_path,class: "btn" do
           %i.fa.fa-edit
       %li.list
-        = link_to edit_user_path(current_user) do
+        = link_to edit_user_path(current_user),class: "btn" do
           %i.fa.fa-cog
   .groups
     - current_user.groups.each do |group| 
